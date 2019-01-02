@@ -1,0 +1,152 @@
+@charset "utf-8";/*编码格式*/
+*{
+	padding: 0;
+	margin: 0;
+}
+div{
+	width: 33.3%;
+	height: 350px;
+	float: left;
+	overflow: hidden;/*溢出隐藏：超出盒子宽高隐藏*/
+	position: relative;
+}
+div img{
+	width: 100%;
+	transition: all 1s;
+}
+div:hover img{
+	opacity: 0.5;/*透明度：1是不透明，0是全透明*/
+}
+.box1 h1{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	color: white;
+	transition: all 2s;
+}
+.box1:hover h1{
+	transform: translateX(30px);
+}
+.box1:hover img{
+	transform: translateX(50px);
+}
+.box1 p{
+	position: absolute;
+	background: deepskyblue;
+	width: 100px;
+	transition: all 0.5s;
+	left: 100px;
+}
+.box1 .p1{
+	top:150px;
+	transform: translateY(500px);
+}
+.box1:hover .p1{
+	transform: translateY(0px);
+}
+
+
+.box1 .p2{
+	top:200px;
+}
+.box1 .p3{
+	top:250px;
+}
+/*box2样式*/
+.box2 h1{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	color: white;
+}
+.box2:hover img{
+	transform: translateX(-30px);
+}
+.box2 p{
+	position: absolute;
+	background: white;
+	left: 50px;
+	transform: translateX(-500px);
+}
+.box2 .p1{
+	top: 100px;
+	transition:all 1s;
+}
+.box2 .p2{
+	top: 130px;
+	transition: all 2s;
+}
+.box2 .p3{
+	top: 160px;
+	transition:all 3s;
+}
+.box2:hover p{
+	transform: translateX(0);
+}
+
+/*box3样式*/
+.box3 h1{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	color: white;
+	transition: 1s;
+}
+.box3:hover img{
+	transform: translateY(-20px);
+}
+
+.box3:hover h1{
+	transform: translateY(20px);
+}
+.box3 p{
+	top: 200px;
+	left:50px ;
+	color: white;
+	position: absolute;
+	transform: translateY(500px);
+	transition: all 1s;
+	opacity: 0;
+}
+.box3:hover p{
+	transform: translateY(-30px);
+	opacity: 1;
+}
+/*box4样式*/
+.box4 h6{
+	position: absolute;
+	top: 120px;
+	left: 35px;
+	color: white;
+	opacity: 0;
+	transition: all 1s;
+}
+.box4:hover h6{
+	opacity: 1;
+	top: 80px;
+}
+.box4 p{
+	position: absolute;
+	right: 30px;
+	bottom: -100px;
+	transition: all 1s;
+	z-index: 9;/*层级：定位过后才有层级*/
+}
+.box4:hover p{
+	bottom: 100px;
+}
+.box4 h2{
+	width: 150%;
+	height: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	transition: all 1s;
+	opacity: 1;
+	background: yellow;
+	transform-origin: 0% 0%;
+}
+.box4:hover h2{
+	opacity: 1;
+	transform: rotate(-20deg);
+}
