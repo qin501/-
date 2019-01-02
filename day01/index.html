@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0
+			}
+			body{
+				background: black;
+			}
+			#box{
+				width: 900px;
+				height: 300px;
+				margin: 150px auto;/*边距：上下150px 左右自动*/
+				border: 2px solid white;/*边框：宽高 实线 白色*/
+			}
+			.minbox{
+				width: 300px;
+				height: 100%;
+				float: left;/*浮动：左浮动*/
+			}
+			.minbox span{
+				display: block;/*转换成块级元素*/
+				width: 100%;
+				height: 250px;
+				text-align: center;
+			}
+			.minbox span img{
+				margin-top: 50px;
+				/*过滤动画：动画名称 执行时长 延时执行*/
+				/*transition: all 1s 1s;*/
+				transition: all 1s;
+			}
+			.minbox a{
+				display: block;
+				width: 250px;
+				height: 30px;
+				border: 2px solid white;
+				margin: 0 auto;/*元素左右居中*/
+				text-align: center;/*文字居中*/
+				color: green;
+				line-height: 30px;
+				text-decoration: none;/*清除a标签默认样式*/
+				background: url(img/allow.png) no-repeat 200px center;/*背景图片不平铺，x轴位置，Y轴位置*/
+				transition: all 1s;
+			}
+			/*鼠标移进入的*/
+			.minbox span:hover img{
+				transform: rotate(360deg) scale(1.2);/*旋转后放大*/
+				/*transform: scale(1.2);*/
+			}
+			.minbox a:hover{
+				background: url(img/allow.png) no-repeat 220px center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="minbox">
+				<span>
+					<img src="img/play.png" alt="" />
+				</span>
+				<a href="javascript:void(0)">PLAY</a>
+			</div>
+			<div class="minbox">
+				<span>
+					<img src="img/touch.png" />
+				</span>
+				<a href="javascript:void(0)">PLAY</a>
+			</div>
+			<div class="minbox">
+				<span>
+					<img src="img/mission.png" />
+				</span>
+				<a href="javascript:void(0)">PLAY</a>
+			</div>
+		</div>
+	</body>
+</html>
