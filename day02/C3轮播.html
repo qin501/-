@@ -3,8 +3,51 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 520px;
+				height: 280px;
+				margin: 200px auto;/*盒子居中*/
+				overflow: hidden;/*溢出隐藏*/
+			}
+			ul,li{
+				list-style: none;/*去除默认样式*/
+			}
+			#box ul{
+				width: 2600px;
+				height: 280px;
+			}
+			#box ul li{
+				float: left;
+				/*调用c3动画属性：动画名称 执行时长 匀速 循环播放*/
+				animation: lunBo 20s infinite;
+			}
+			@keyframes lunBo{
+				from{transform: translateX(0);}
+				11%{transform: translateX(-520px);}
+				22%{transform: translateX(-1040px);}
+				33%{transform: translateX(-1560px);}
+				44%{transform: translateX(-2080px);}
+
+				66%{transform: translateX(-1560px);}
+				77%{transform: translateX(-1040px);}
+				88%{transform: translateX(-520px);}
+				to{transform: translateX(0);}
+			}
+		</style>
 	</head>
 	<body>
-		
+		<div id="box">
+			<ul class="list">
+				<li><img src="img/1.jpg"></li>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+			</ul>
+			
+		</div>
 	</body>
 </html>
