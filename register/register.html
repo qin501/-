@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script>
+			$(function(){
+				//点击全选
+				$('#check1').click(function(){
+					var aa=$(this);
+					//console.log(aa);
+					var a=$(this)[0].checked;
+					$.each($('input:checkbox'), function() {
+						this.checked=a;
+					});
+				});
+				//省份
+				var province=["广东省","四川省","河南省","河北省","江西省"];
+				
+//				$('#pro').click(function(){
+					var line='<option>---省份---</option>';
+					for(var i=0;i<province.length;i++){
+						line+="<option>"+province[i]+"</option>";
+					}
+//					console.log(line);
+					$('#pro').html(line);
+//				});
+				var citys = [
+						["广州市","深圳市","湛江市","中山市"],
+						["成都市","重庆市","都江堰市","攀枝花市"],
+						["开封市","洛阳市","洛河市","荥阳市"],
+						["石家庄市","秦皇岛市","保定市","唐山市"],
+						["九江市","南昌市","景德镇市","吉安市"]
+				];
+				//加载城市
+				$('#pro').on('change',function(){
+					var index = $(this)[0].selectedIndex-1;
+					var line='<option>---城市---</option>';
+					if(index==-1){
+						$('#city').html(line);
+						return;
+					}
+					for(var i=0;i<citys[index].length;i++){
+						line+="<option>"+citys[index][i]+"</option>";
+					}
+					//console.log(citys.length);
+					//console.log(citys[index]);
+//					console.log(line);
+					$('#city').html(line);
+//					console.log(a);
+				});
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<div>
+				用户名：<input type="text" name="username" placeholder="请输入用户名" />
+			</div>
+			<div>
+				密码：<input type="password" name="password" placeholder="请输入密码" />
+			</div>
+			<div>
+				确认密码：<input type="password" name="password1" placeholder="请输入确认密码"/>
+			</div>
+			<div>
+				性别：
+				<input type="radio" name="sex" />男
+				<input type="radio" name="sex" />女
+			</div>
+			<div>
+				<select name="pro" id="pro">
+					<option value="">---省份---</option>
+				</select>
+				<select name="city" id="city">
+					<option>---城市---</option>
+				</select>
+			</div>
+			<div>
+				<input id="check1" type="checkbox" />全选
+				<input type="checkbox" />中国象棋
+				<input type="checkbox" />游泳
+				<input type="checkbox" />吃鸡
+				<input type="checkbox" />读书
+				<input type="checkbox" />游戏
+				<input type="checkbox" />打飞机
+			</div>
+			<div>
+				<input type="date" />
+			</div>
+			<div>
+				<input type="submit" value="注册"/>
+				<input type="reset" value="重置"/>
+			</div>
+		</div>
+	</body>
+</html>

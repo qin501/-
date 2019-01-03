@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			
+			table td{
+				text-align: center; 
+			}
+			#t1{
+				text-align: right;
+			}
+			table{
+				/*background-color: rgba(236,163,211,0.8);*//*rgba()前三个参数是颜色值，0.8是透明度*/
+				/*background: radial-gradient(black,red,yellow);*//*此方法是颜色从black,到red，yellow渐变,从中间到*/
+				/*background: repeating-linear-gradient(black,red,yellow);*//**/
+				/*background:repeating-linear-gradient(to left top,red,yellow,pink)*/
+				background: url(img/admin.jpg)no-repeat;
+				background-size: 100% 100%;
+			}
+			tr{
+				background-color: white;
+			}
+			body{
+				
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var value="";
+				$('.c1').click(function(){
+					//alert($(this).text());
+					value+=$(this).text();
+					$('#t1').html(value);
+				});
+				/*等号事件*/
+				$('#t2').click(function(){
+					$('#t1').html(eval(value));
+					value=$('#t1').text();
+				});
+				/*ce事件*/
+				$('#ce').click(function(){
+					$('#t1').html('0.0');
+					value='';
+				})
+			})
+			
+		</script>
+	</head>
+	<body>  
+		<table border="1" width="400px" height="600px" cellpadding="10px" cellspacing="20px"><!--cellpadding是内边框,cellspacing是外边框-->
+			<tr>
+				<td id="t1" colspan="5" align="right" valign="bottom">0.0</td><!--valign="bottom是往下移"-->
+			</tr>
+			<tr>
+				<td id="mc">MC</td>
+				<td>MR</td>
+				<td>MS</td>
+				<td>M+</td>
+				<td>M-</td>
+			</tr>
+			<tr>
+				<td>←</td>
+				<td id="ce">CE</td>
+				<td>C</td>
+				<td>±</td>
+				<td>√</td>
+			</tr>
+			<tr>
+				<td class="c1">7</td>
+				<td class="c1">8</td>
+				<td class="c1">9</td>
+				<td class="c1">/</td>
+				<td class="c1">%</td>
+			</tr>
+			<tr>
+				<td class="c1">4</td>
+				<td class="c1">5</td>
+				<td class="c1">6</td>
+				<td class="c1">*</td>
+				<td class="c1">1/x</td>
+			</tr>
+			<tr>
+				<td class="c1">1</td>
+				<td class="c1">2</td>
+				<td class="c1">3</td>
+				<td class="c1">-</td>
+				<td rowspan="2" align="center" id="t2">=</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" class="c1">0</td>
+				<td class="c1">.</td>
+				<td class="c1"+</td>
+			</tr>
+		</table>
+	</body>
+</html>
