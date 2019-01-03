@@ -150,3 +150,34 @@ div:hover img{
 	opacity: 1;
 	transform: rotate(-20deg);
 }
+/*box样式*/
+.box5 h2{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	border: 2px solid black;
+	transition: all 1s;
+	transform: rotate(0) translateX(-500px);
+	transform-origin: 0% 0%;
+	
+}
+.box5:hover h2{
+	transform: rotate(360deg) translateY(0);
+}
+/*音乐图标按钮样式*/
+#btn{
+	position: fixed;
+	right: 50px;
+	top: 50px;
+	width: 50px;
+
+}
+.btn{
+	animation: rotate 1s linear infinite;
+}
+@keyframes rotate{
+	from{transform: rotate(0);}
+	to{transform: rotate(360deg);}
+}
