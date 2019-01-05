@@ -11,6 +11,9 @@
 				top: 0;
 				left: 0;
 			}
+			.fz{
+				transform:rotateY(180deg);
+			}
 		</style>
 	</head>
 	<body>
@@ -28,6 +31,8 @@
 				case 37:
 					num-=5;
 					obj.style.left=num+'px';
+					obj.className='fz';
+					console.log(111111111);
 					break;
 				case 38:
 					topN-=5;
@@ -39,6 +44,7 @@
 						obj.src='img/run.gif';
 					}
 					num+=5;
+					obj.className='';
 					obj.style.left=num+'px';
 					break;
 				case 40:
