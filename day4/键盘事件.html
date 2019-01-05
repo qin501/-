@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#obj{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img id="obj" src="img/time.gif"/>
+	</body>
+	<script type="text/javascript">
+		var obj=document.getElementById('obj');
+		var num=0;
+		var topN=0;
+		var flag=true;
+		/*键盘事件*/
+		window.onkeydown=function(e){
+			console.log(e.keyCode);
+			switch(e.keyCode){
+				case 37:
+					num-=5;
+					obj.style.left=num+'px';
+					break;
+				case 38:
+					topN-=5;
+					obj.style.top=topN+'px';
+					break;
+				case 39:
+				//alert(obj.src.indexOf('img/run.gif'));
+					if(obj.src.indexOf('img/run.gif')==-1){
+						obj.src='img/run.gif';
+					}
+					num+=5;
+					obj.style.left=num+'px';
+					break;
+				case 40:
+					topN+=5;
+					obj.style.top=topN+'px';
+					break;
+				case 32:
+					if(obj.src.indexOf('img/jn1.gif')==-1){
+						obj.src='img/jn1.gif';
+					}
+					if(flag){
+						flag=false;
+						setTimeout(function(){
+							obj.src='img/time.gif';
+						},2000);
+						setTimeout(function(){
+							flag=true;
+						},2000)
+					}
+					break;
+				
+			}
+		}
+	</script>
+</html>

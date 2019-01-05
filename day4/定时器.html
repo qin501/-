@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var i=0;
+			/*常规定时器，不清除，会一直执行*/
+			var a=setInterval(function(){
+				document.write(i++);
+				if(i==10){
+					/*清除定时器*/
+					clearInterval(a);
+				}
+				
+			},1000);
+			/*一次性定时器，启动一次就暂停*/
+			setTimeout(function(){
+				document.write('一次性定时器');
+				//clearTimeout() 清除一次性定时器语句
+			},100);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
